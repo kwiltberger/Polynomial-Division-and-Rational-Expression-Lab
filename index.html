@@ -5,96 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Polynomial Division & Rational Expression Lab</title>
 <style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f6f9fb;
-    color:#1f2933;
-    line-height:1.6;
-    margin:0;
-    padding:20px;
-}
+body{font-family:Arial,sans-serif;background:#f6f9fb;color:#1f2933;line-height:1.6;margin:0;padding:20px}
 .container{max-width:1050px;margin:0 auto}
 .hero{background:#0f2d44;color:white;padding:24px;border-radius:10px}
-.card{
-    background:white;
-    border-left:6px solid #2f80a8;
-    padding:18px;
-    border-radius:10px;
-    margin-top:18px;
-}
+.card{background:white;border-left:6px solid #2f80a8;padding:18px;border-radius:10px;margin-top:18px}
 .green{background:#eefaf1;border-left-color:#3ca65c}
 .yellow{background:#fff8e6;border-left-color:#f2b705}
 .gray{background:#f6f9fb;border-left-color:#d6e6ef}
 .purple{background:#f3e5f5;border-left-color:#9c64a6}
-.red{background:#fdecea;border-left-color:#c0392b}
-.problem{
-    background:white;
-    border:1px solid #d6e6ef;
-    padding:14px;
-    border-radius:8px;
-    margin:12px 0;
-    font-size:18px;
-}
-input,select{
-    padding:10px;
-    font-size:16px;
-    border:2px solid #d6e6ef;
-    border-radius:8px;
-    margin:6px;
-    max-width:280px;
-}
-button{
-    background:#0f2d44;
-    color:white;
-    border:none;
-    padding:11px 16px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:15px;
-    margin:6px 4px 6px 0;
-}
-button:hover{background:#173f5f}
-.feedback{font-weight:bold;margin-top:10px}
-.correct{color:#1f7a3a}
-.incorrect{color:#c0392b}
-.hint{
-    display:none;
-    background:#fff8e6;
-    border-left:6px solid #f2b705;
-    padding:12px;
-    border-radius:8px;
-    margin-top:10px;
-}
-.progress{
-    font-size:20px;
-    font-weight:bold;
-    color:#0f2d44;
-}
-.frac{
-    display:inline-block;
-    text-align:center;
-    vertical-align:middle;
-}
-.frac span:first-child{
-    display:block;
-    border-bottom:2px solid #1f2933;
-    padding:0 10px;
-}
-.frac span:last-child{
-    display:block;
-    padding:0 10px;
-}
-.step-box{
-    background:#f6f9fb;
-    border:1px solid #d6e6ef;
-    padding:12px;
-    border-radius:8px;
-    margin:10px 0;
-}
+.problem{background:white;border:1px solid #d6e6ef;padding:14px;border-radius:8px;margin:12px 0;font-size:18px}
+input,select{padding:8px;font-size:16px;border:2px solid #d6e6ef;border-radius:8px;margin:4px;max-width:180px}
+button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radius:8px;cursor:pointer;font-size:15px;margin:6px 4px 6px 0}
+.feedback{font-weight:bold;margin-top:10px}.correct{color:#1f7a3a}.incorrect{color:#c0392b}
+.hint{display:none;background:#fff8e6;border-left:6px solid #f2b705;padding:12px;border-radius:8px;margin-top:10px}
+.progress{font-size:20px;font-weight:bold;color:#0f2d44}
+.frac{display:inline-block;text-align:center;vertical-align:middle}
+.frac span:first-child{display:block;border-bottom:2px solid #1f2933;padding:0 10px}
+.frac span:last-child{display:block;padding:0 10px}
+.frac input{width:110px;text-align:center}
+.step-box{background:#f6f9fb;border:1px solid #d6e6ef;padding:12px;border-radius:8px;margin:10px 0}
 .complete{display:none}
-@media(max-width:800px){
-    input,select{max-width:95%;width:95%}
-}
+.long-division{font-family:Arial,sans-serif;font-size:20px;overflow-x:auto;padding:10px;background:white;border:1px solid #d6e6ef;border-radius:8px}
+.ld-row{margin:6px 0}
+.ld-divisor{display:inline-block;border-right:2px solid #1f2933;border-radius:0 0 8px 0;padding-right:8px;margin-right:4px}
+.ld-inside{display:inline-block;border-top:2px solid #1f2933;padding:4px 10px}
+.synthetic{border-collapse:collapse;margin-top:10px;background:white}
+.synthetic td{border:1px solid #d6e6ef;padding:8px;text-align:center}
+.synthetic .left{border-right:3px solid #1f2933}
+.synthetic .bottom td{border-top:3px solid #1f2933}
+@media(max-width:800px){input,select{max-width:95%;width:95%}}
 </style>
 </head>
 
@@ -102,433 +41,309 @@ button:hover{background:#173f5f}
 <div class="container">
 
 <div class="hero">
-    <h1>Algebra 2 | Unit 3 Week 1</h1>
-    <p>Self-Check & Extra Practice — Polynomial Division & Rational Expression Lab</p>
+<h1>Algebra 2 | Unit 3 Week 1</h1>
+<p>Self-Check & Extra Practice — Polynomial Division & Rational Expression Lab</p>
 </div>
 
 <div class="card">
-    <h2>Lab Mission</h2>
-    <p>Work through each lab to practice polynomial division, synthetic division, rewriting rational expressions, simplifying rational expressions, and simplifying complex fractions.</p>
-    <p>This is extra practice. Use hints, check your work, and retry as needed.</p>
-    <p class="progress">Progress: <span id="progressCount">0</span> / 6 labs complete</p>
+<h2>Lab Mission</h2>
+<p>Practice polynomial long division, synthetic division, rewriting rational expressions, simplifying rational expressions, and simplifying complex fractions.</p>
+<p class="progress">Progress: <span id="progressCount">0</span> / 6 labs complete</p>
 </div>
 
 <div class="card yellow">
-    <h2>Helpful Reminders</h2>
-    <p>☐ Long division works for any polynomial divisor.</p>
-    <p>☐ Synthetic division works directly only when the divisor is in the form <strong>x − c</strong>.</p>
-    <p>☐ Rational expression rewrite form: <strong>quotient + remainder/divisor</strong>.</p>
-    <p>☐ Cancel common factors, not terms.</p>
-    <p>☐ Restrictions come from the original denominator.</p>
+<h2>Helpful Reminders</h2>
+<p>☐ Long division works for any polynomial divisor.</p>
+<p>☐ Synthetic division works directly only when the divisor is in the form <strong>x − c</strong>.</p>
+<p>☐ Rational expression rewrite form: <strong>quotient + remainder/divisor</strong>.</p>
+<p>☐ Cancel common factors, not terms.</p>
+<p>☐ Restrictions come from the original denominator.</p>
 </div>
 
 <div class="card green">
-    <h2>Lab 1 — Choose the Method</h2>
-    <p>Choose the best method for each problem.</p>
+<h2>Lab 1 — Choose the Method</h2>
 
-    <div class="problem">
-        <p><strong>A.</strong> Divide <strong>x³ + 3x² + 0x − 4</strong> by <strong>x + 2</strong>.</p>
-        <select id="lab1a">
-            <option value="">Choose method</option>
-            <option value="long">Long division</option>
-            <option value="synthetic">Synthetic division</option>
-            <option value="factor">Simplify by factoring</option>
-        </select>
-        <p>Why? <input id="lab1aWhy" placeholder="Complete: divisor is..."></p>
-    </div>
+<div class="problem">
+<p><strong>A.</strong> Divide <strong>x³ + 3x² + 0x − 4</strong> by <strong>x + 2</strong>.</p>
+<select id="lab1a">
+<option value="">Choose method</option>
+<option value="long">Long division</option>
+<option value="synthetic">Synthetic division</option>
+<option value="factor">Simplify by factoring</option>
+</select>
+</div>
 
-    <div class="problem">
-        <p><strong>B.</strong> Simplify <strong>(x² − 9)/(x² + 5x + 6)</strong>.</p>
-        <select id="lab1b">
-            <option value="">Choose method</option>
-            <option value="long">Long division</option>
-            <option value="synthetic">Synthetic division</option>
-            <option value="factor">Simplify by factoring</option>
-        </select>
-        <p>Why? <input id="lab1bWhy" placeholder="Complete: common factors..."></p>
-    </div>
+<div class="problem">
+<p><strong>B.</strong> Simplify <strong>(x² − 9)/(x² + 5x + 6)</strong>.</p>
+<select id="lab1b">
+<option value="">Choose method</option>
+<option value="long">Long division</option>
+<option value="synthetic">Synthetic division</option>
+<option value="factor">Simplify by factoring</option>
+</select>
+</div>
 
-    <button onclick="checkLab1()">Check Lab 1</button>
-    <button onclick="toggleHint('hint1')">Show Hint</button>
-    <div id="hint1" class="hint">
-        Synthetic division works when the divisor is in the form x − c. Rational expressions with factorable numerator and denominator are usually simplified by factoring.
-    </div>
-    <div id="feedback1" class="feedback"></div>
+<button onclick="checkLab1()">Check Lab 1</button>
+<button onclick="toggleHint('hint1')">Show Hint</button>
+<div id="hint1" class="hint">Synthetic division works when the divisor is in the form x − c. Rational expressions with factorable numerator and denominator are usually simplified by factoring.</div>
+<div id="feedback1" class="feedback"></div>
 </div>
 
 <div class="card purple">
-    <h2>Lab 2 — Long Division Builder</h2>
-    <p>Complete the steps for this division problem.</p>
+<h2>Lab 2 — Long Division Builder</h2>
+<p>Fill in the missing parts of the polynomial long division setup.</p>
 
-    <div class="problem">
-        <p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
-    </div>
+<div class="problem">
+<p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
+</div>
 
-    <div class="step-box">
-        <p><strong>Step 1:</strong> x³ ÷ x = <input id="lab2step1" placeholder="first quotient term"></p>
-        <p><strong>Step 2:</strong> Multiply: <input id="lab2step2" placeholder="(x + 2)(?)"></p>
-        <p><strong>Step 3:</strong> After subtracting, the next expression is <input id="lab2step3" placeholder="example: x² + 0x"></p>
-        <p><strong>Step 4:</strong> Final quotient: <input id="lab2quotient" placeholder="quotient"></p>
-        <p><strong>Step 5:</strong> Remainder: <input id="lab2remainder" placeholder="remainder"></p>
-    </div>
+<div class="long-division">
+<div class="ld-row" style="margin-left:120px;">
+<input id="lab2q1" placeholder="x²"> + <input id="lab2q2" placeholder="x"> + <input id="lab2q3" placeholder="-2">
+</div>
+<div class="ld-row">
+<span class="ld-divisor">x + 2</span>
+<span class="ld-inside">x³ + 3x² + 0x − 4</span>
+</div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m1" placeholder="x³ + 2x²"> )</div>
+<div class="ld-row" style="margin-left:135px;">______________________</div>
+<div class="ld-row" style="margin-left:140px;"><input id="lab2s1" placeholder="x² + 0x"></div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m2" placeholder="x² + 2x"> )</div>
+<div class="ld-row" style="margin-left:135px;">______________________</div>
+<div class="ld-row" style="margin-left:160px;"><input id="lab2s2" placeholder="-2x - 4"></div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m3" placeholder="-2x - 4"> )</div>
+<div class="ld-row" style="margin-left:135px;">______________________</div>
+<div class="ld-row" style="margin-left:180px;">Remainder: <input id="lab2r" placeholder="0"></div>
+</div>
 
-    <button onclick="checkLab2()">Check Lab 2</button>
-    <button onclick="toggleHint('hint2')">Show Hint</button>
-    <div id="hint2" class="hint">
-        The correct result is the same as factoring x³ + 3x² − 4 into (x + 2)(x² + x − 2). Remember the missing term is 0x.
-    </div>
-    <div id="feedback2" class="feedback"></div>
+<button onclick="checkLab2()">Check Lab 2</button>
+<button onclick="toggleHint('hint2')">Show Hint</button>
+<div id="hint2" class="hint">First divide x³ by x to get x². Remember to subtract the entire row each time.</div>
+<div id="feedback2" class="feedback"></div>
 </div>
 
 <div class="card green">
-    <h2>Lab 3 — Synthetic Division Builder</h2>
-    <p>Use synthetic division on the same polynomial.</p>
+<h2>Lab 3 — Synthetic Division Builder</h2>
+<p>Fill in the synthetic division table.</p>
 
-    <div class="problem">
-        <p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
-    </div>
+<div class="problem">
+<p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
+</div>
 
-    <div class="step-box">
-        <p>Since x + 2 = x − (<input id="lab3c" placeholder="c">), use c = <input id="lab3c2" placeholder="c"></p>
-        <p>Coefficient list: 
-            <input id="lab3coef1" class="small" placeholder="1">,
-            <input id="lab3coef2" class="small" placeholder="3">,
-            <input id="lab3coef3" class="small" placeholder="0">,
-            <input id="lab3coef4" class="small" placeholder="-4">
-        </p>
-        <p>Bottom row:
-            <input id="lab3bot1" placeholder="1">,
-            <input id="lab3bot2" placeholder="1">,
-            <input id="lab3bot3" placeholder="-2">,
-            <input id="lab3bot4" placeholder="0">
-        </p>
-        <p>Quotient: <input id="lab3quotient" placeholder="quotient"></p>
-        <p>Remainder: <input id="lab3remainder" placeholder="remainder"></p>
-    </div>
+<p>Since <strong>x + 2 = x − (−2)</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="-2"></p>
 
-    <button onclick="checkLab3()">Check Lab 3</button>
-    <button onclick="toggleHint('hint3')">Show Hint</button>
-    <div id="hint3" class="hint">
-        For x + 2, use c = -2. The coefficient list must include the missing 0x term.
-    </div>
-    <div id="feedback3" class="feedback"></div>
+<table class="synthetic">
+<tbody>
+<tr>
+<td class="left"><input id="lab3left" placeholder="-2"></td>
+<td><input id="lab3coef1" placeholder="1"></td>
+<td><input id="lab3coef2" placeholder="3"></td>
+<td><input id="lab3coef3" placeholder="0"></td>
+<td><input id="lab3coef4" placeholder="-4"></td>
+</tr>
+<tr>
+<td class="left"></td>
+<td></td>
+<td><input id="lab3prod1" placeholder="-2"></td>
+<td><input id="lab3prod2" placeholder="-2"></td>
+<td><input id="lab3prod3" placeholder="4"></td>
+</tr>
+<tr class="bottom">
+<td class="left"></td>
+<td><input id="lab3bot1" placeholder="1"></td>
+<td><input id="lab3bot2" placeholder="1"></td>
+<td><input id="lab3bot3" placeholder="-2"></td>
+<td><input id="lab3bot4" placeholder="0"></td>
+</tr>
+</tbody>
+</table>
+
+<p>Quotient: <input id="lab3q" placeholder="x² + x - 2"> Remainder: <input id="lab3r" placeholder="0"></p>
+
+<button onclick="checkLab3()">Check Lab 3</button>
+<button onclick="toggleHint('hint3')">Show Hint</button>
+<div id="hint3" class="hint">Use coefficients 1, 3, 0, −4. The 0 is needed because the x term is missing.</div>
+<div id="feedback3" class="feedback"></div>
 </div>
 
 <div class="card yellow">
-    <h2>Lab 4 — Rewrite the Rational Expression</h2>
-    <p>Rewrite using quotient plus remainder over divisor.</p>
+<h2>Lab 4 — Rewrite the Rational Expression</h2>
+<p>Rewrite using quotient plus remainder over divisor.</p>
 
-    <div class="problem">
-        <p>
-            <strong>Rewrite:</strong>
-            <span class="frac">
-                <span>x³ + 4x² + x + 7</span>
-                <span>x + 2</span>
-            </span>
-        </p>
-    </div>
-
-    <div class="step-box">
-        <p>Quotient: <input id="lab4quotient" placeholder="quotient"></p>
-        <p>Remainder: <input id="lab4remainder" placeholder="remainder"></p>
-        <p>
-            Final rewrite:
-            <input id="lab4final1" placeholder="quotient">
-            +
-            <span class="frac">
-                <span><input id="lab4final2" placeholder="remainder"></span>
-                <span><input id="lab4final3" placeholder="divisor"></span>
-            </span>
-        </p>
-    </div>
-
-    <button onclick="checkLab4()">Check Lab 4</button>
-    <button onclick="toggleHint('hint4')">Show Hint</button>
-    <div id="hint4" class="hint">
-        Divide x³ + 4x² + x + 7 by x + 2. The quotient is quadratic and the remainder is a constant.
-    </div>
-    <div id="feedback4" class="feedback"></div>
+<div class="problem">
+<p><strong>Rewrite:</strong>
+<span class="frac"><span>x³ + 4x² + x + 7</span><span>x + 2</span></span>
+</p>
 </div>
+
+<div class="step-box">
+<p>Quotient: <input id="lab4q" placeholder="x² + 2x - 3"></p>
+<p>Remainder: <input id="lab4r" placeholder="13"></p>
+<p>Final rewrite:
+<input id="lab4fq" placeholder="quotient"> +
+<span class="frac"><span><input id="lab4fr" placeholder="13"></span><span><input id="lab4fd" placeholder="x + 2"></span></span>
+</p>
+</div>
+
+<button onclick="checkLab4()">Check Lab 4</button>
+<button onclick="toggleHint('hint4')">Show Hint</button>
+<div id="hint4" class="hint">Final form is quotient + remainder/divisor.</div>
+<div id="feedback4" class="feedback"></div>
+</div>
+
 <div class="card green">
-    <h2>Lab 5 — Simplify & Restrictions</h2>
-    <p>Factor first, cancel only common factors, and keep the original restrictions.</p>
+<h2>Lab 5 — Simplify & Restrictions</h2>
 
-    <div class="problem">
-        <p>
-            <strong>Simplify:</strong>
-            <span class="frac">
-                <span>x² − 9</span>
-                <span>x² + 5x + 6</span>
-            </span>
-        </p>
-    </div>
+<div class="problem">
+<p><strong>Simplify:</strong>
+<span class="frac"><span>x² − 9</span><span>x² + 5x + 6</span></span>
+</p>
+</div>
 
-    <div class="step-box">
-        <p>Factored numerator: <input id="lab5num" placeholder="factored numerator"></p>
-        <p>Factored denominator: <input id="lab5den" placeholder="factored denominator"></p>
-        <p>Canceled factor: <input id="lab5cancel" placeholder="common factor"></p>
-        <p>Simplified expression: <input id="lab5final" placeholder="final expression"></p>
-        <p>Restrictions: <input id="lab5restrict" placeholder="x ≠ ..."></p>
-    </div>
+<div class="step-box">
+<p>Factored numerator: <input id="lab5num" placeholder="(x - 3)(x + 3)"></p>
+<p>Factored denominator: <input id="lab5den" placeholder="(x + 2)(x + 3)"></p>
+<p>Canceled factor: <input id="lab5cancel" placeholder="x + 3"></p>
+<p>Simplified expression: <input id="lab5final" placeholder="(x - 3)/(x + 2)"></p>
+<p>Restrictions: <input id="lab5restrict" placeholder="x ≠ -2, x ≠ -3"></p>
+</div>
 
-    <button onclick="checkLab5()">Check Lab 5</button>
-    <button onclick="toggleHint('hint5')">Show Hint</button>
-    <div id="hint5" class="hint">
-        Factor x² − 9 as a difference of squares. Restrictions come from the original denominator.
-    </div>
-    <div id="feedback5" class="feedback"></div>
+<button onclick="checkLab5()">Check Lab 5</button>
+<button onclick="toggleHint('hint5')">Show Hint</button>
+<div id="hint5" class="hint">Restrictions come from the original denominator, even if a factor cancels later.</div>
+<div id="feedback5" class="feedback"></div>
 </div>
 
 <div class="card purple">
-    <h2>Lab 6 — Complex Fraction Builder</h2>
-    <p>Simplify by rewriting the complex fraction as multiplication by the reciprocal.</p>
+<h2>Lab 6 — Complex Fraction Builder</h2>
 
-    <div class="problem">
-        <p>
-            <strong>Simplify:</strong>
-            <span class="frac">
-                <span>
-                    <span class="frac"><span>x − 2</span><span>x + 5</span></span>
-                </span>
-                <span>
-                    <span class="frac"><span>3</span><span>x + 5</span></span>
-                </span>
-            </span>
-        </p>
-    </div>
+<div class="problem">
+<p><strong>Simplify:</strong>
+<span class="frac">
+<span><span class="frac"><span>x − 2</span><span>x + 5</span></span></span>
+<span><span class="frac"><span>3</span><span>x + 5</span></span></span>
+</span>
+</p>
+</div>
 
-    <div class="step-box">
-        <p>
-            Rewrite as multiplication:
-            <input id="lab6first" placeholder="first fraction">
-            ·
-            <input id="lab6second" placeholder="reciprocal">
-        </p>
-        <p>Canceled factor: <input id="lab6cancel" placeholder="common factor"></p>
-        <p>Final simplified result: <input id="lab6final" placeholder="final expression"></p>
-        <p>Restriction: <input id="lab6restrict" placeholder="x ≠ ..."></p>
-    </div>
+<div class="step-box">
+<p>Rewrite as multiplication:</p>
+<p style="font-size:20px;">
+<span class="frac"><span><input id="lab6aNum" placeholder="x - 2"></span><span><input id="lab6aDen" placeholder="x + 5"></span></span>
+&nbsp;·&nbsp;
+<span class="frac"><span><input id="lab6bNum" placeholder="x + 5"></span><span><input id="lab6bDen" placeholder="3"></span></span>
+</p>
 
-    <button onclick="checkLab6()">Check Lab 6</button>
-    <button onclick="toggleHint('hint6')">Show Hint</button>
-    <div id="hint6" class="hint">
-        Dividing by 3/(x+5) means multiplying by (x+5)/3.
-    </div>
-    <div id="feedback6" class="feedback"></div>
+<p>Canceled factor: <input id="lab6cancel" placeholder="x + 5"></p>
+
+<p>Final simplified result:</p>
+<p style="font-size:20px;">
+<span class="frac"><span><input id="lab6finalNum" placeholder="x - 2"></span><span><input id="lab6finalDen" placeholder="3"></span></span>
+</p>
+
+<p>Restriction: <input id="lab6restrict" placeholder="x ≠ -5"></p>
+</div>
+
+<button onclick="checkLab6()">Check Lab 6</button>
+<button onclick="toggleHint('hint6')">Show Hint</button>
+<div id="hint6" class="hint">Dividing by 3/(x + 5) means multiplying by (x + 5)/3.</div>
+<div id="feedback6" class="feedback"></div>
 </div>
 
 <div class="card green complete" id="completeMessage">
-    <h2>Lab Complete!</h2>
-    <p>Excellent work. You practiced polynomial division, synthetic division, rewriting rational expressions, simplifying rational expressions, and simplifying complex fractions.</p>
-    <p>You are ready for the Teacher Check-In or Prove It! assignment.</p>
+<h2>Lab Complete!</h2>
+<p>Excellent work. You practiced all major Unit 3 Week 1 skills.</p>
 </div>
 
-<p style="text-align:center;">
-    <button onclick="resetActivity()">Reset Activity</button>
-</p>
+<p style="text-align:center;"><button onclick="resetActivity()">Reset Activity</button></p>
 
 </div>
 
 <script>
-let completed = {
-    lab1:false,
-    lab2:false,
-    lab3:false,
-    lab4:false,
-    lab5:false,
-    lab6:false
-};
+let completed={lab1:false,lab2:false,lab3:false,lab4:false,lab5:false,lab6:false};
 
-function normalize(value){
-    return String(value)
-        .toLowerCase()
-        .replace(/\s+/g,"")
-        .replace(/−/g,"-");
+function normalize(v){
+return String(v).toLowerCase().replace(/\s+/g,"").replace(/−/g,"-").replace(/²/g,"^2").replace(/³/g,"^3").replace(/≠/g,"!=");
 }
-
-function toggleHint(id){
-    const hint = document.getElementById(id);
-    hint.style.display = hint.style.display === "block" ? "none" : "block";
-}
-
-function markComplete(labName){
-    if(!completed[labName]){
-        completed[labName] = true;
-        updateProgress();
-    }
-}
-
-function updateProgress(){
-    const count = Object.values(completed).filter(Boolean).length;
-    document.getElementById("progressCount").textContent = count;
-    if(count === 6){
-        document.getElementById("completeMessage").style.display = "block";
-        document.getElementById("completeMessage").scrollIntoView({behavior:"smooth"});
-    }
-}
-
-function accepts(value, answers){
-    const v = normalize(value);
-    return answers.map(normalize).includes(v);
-}
+function accepts(v,arr){const n=normalize(v);return arr.map(normalize).includes(n);}
+function toggleHint(id){const h=document.getElementById(id);h.style.display=h.style.display==="block"?"none":"block";}
+function markComplete(lab){if(!completed[lab]){completed[lab]=true;updateProgress();}}
+function updateProgress(){const c=Object.values(completed).filter(Boolean).length;document.getElementById("progressCount").textContent=c;if(c===6){document.getElementById("completeMessage").style.display="block";}}
 
 function checkLab1(){
-    const a = document.getElementById("lab1a").value;
-    const b = document.getElementById("lab1b").value;
-    const feedback = document.getElementById("feedback1");
-
-    if(a === "synthetic" && b === "factor"){
-        feedback.innerHTML = '<span class="correct">Correct!</span> Synthetic division works for x + 2 because it can be written as x − (−2). The rational expression should be simplified by factoring.';
-        markComplete("lab1");
-    } else {
-        feedback.innerHTML = '<span class="incorrect">Not quite.</span> Recheck when synthetic division works and when factoring is the better strategy.';
-    }
+let ok=document.getElementById("lab1a").value==="synthetic"&&document.getElementById("lab1b").value==="factor";
+document.getElementById("feedback1").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+if(ok)markComplete("lab1");
 }
 
 function checkLab2(){
-    const s1 = document.getElementById("lab2step1").value;
-    const s2 = document.getElementById("lab2step2").value;
-    const s3 = document.getElementById("lab2step3").value;
-    const q = document.getElementById("lab2quotient").value;
-    const r = document.getElementById("lab2remainder").value;
-    const feedback = document.getElementById("feedback2");
-
-    const ok =
-        accepts(s1,["x^2","x²"]) &&
-        accepts(s2,["x^3+2x^2","x³+2x²","x^2(x+2)","x²(x+2)"]) &&
-        accepts(s3,["x^2+0x","x²+0x","x^2","x²"]) &&
-        accepts(q,["x^2+x-2","x²+x-2"]) &&
-        accepts(r,["0"]);
-
-    if(ok){
-        feedback.innerHTML = '<span class="correct">Correct!</span> The quotient is x² + x − 2 and the remainder is 0.';
-        markComplete("lab2");
-    } else {
-        feedback.innerHTML = '<span class="incorrect">Not quite.</span> Check the first division step, then make sure you subtract carefully.';
-    }
+let ok=
+accepts(document.getElementById("lab2q1").value,["x^2"]) &&
+accepts(document.getElementById("lab2q2").value,["x"]) &&
+accepts(document.getElementById("lab2q3").value,["-2"]) &&
+accepts(document.getElementById("lab2m1").value,["x^3+2x^2"]) &&
+accepts(document.getElementById("lab2s1").value,["x^2+0x","x^2"]) &&
+accepts(document.getElementById("lab2m2").value,["x^2+2x"]) &&
+accepts(document.getElementById("lab2s2").value,["-2x-4"]) &&
+accepts(document.getElementById("lab2m3").value,["-2x-4"]) &&
+accepts(document.getElementById("lab2r").value,["0"]);
+document.getElementById("feedback2").innerHTML=ok?'<span class="correct">Correct!</span> Quotient x² + x − 2, remainder 0.':'<span class="incorrect">Not quite. Check each subtract row.</span>';
+if(ok)markComplete("lab2");
 }
 
 function checkLab3(){
-    const c1 = document.getElementById("lab3c").value;
-    const c2 = document.getElementById("lab3c2").value;
-    const coefs = [
-        document.getElementById("lab3coef1").value,
-        document.getElementById("lab3coef2").value,
-        document.getElementById("lab3coef3").value,
-        document.getElementById("lab3coef4").value
-    ];
-    const bots = [
-        document.getElementById("lab3bot1").value,
-        document.getElementById("lab3bot2").value,
-        document.getElementById("lab3bot3").value,
-        document.getElementById("lab3bot4").value
-    ];
-    const q = document.getElementById("lab3quotient").value;
-    const r = document.getElementById("lab3remainder").value;
-    const feedback = document.getElementById("feedback3");
-
-    const ok =
-        accepts(c1,["-2"]) &&
-        accepts(c2,["-2"]) &&
-        coefs.every((v,i)=>accepts(v,[["1","3","0","-4"][i]])) &&
-        bots.every((v,i)=>accepts(v,[["1","1","-2","0"][i]])) &&
-        accepts(q,["x^2+x-2","x²+x-2"]) &&
-        accepts(r,["0"]);
-
-    if(ok){
-        feedback.innerHTML = '<span class="correct">Correct!</span> The synthetic division bottom row gives quotient x² + x − 2 and remainder 0.';
-        markComplete("lab3");
-    } else {
-        feedback.innerHTML = '<span class="incorrect">Not quite.</span> Use c = −2 and include the missing 0 coefficient.';
-    }
+let vals=["lab3c","lab3left","lab3coef1","lab3coef2","lab3coef3","lab3coef4","lab3prod1","lab3prod2","lab3prod3","lab3bot1","lab3bot2","lab3bot3","lab3bot4"];
+let ans=["-2","-2","1","3","0","-4","-2","-2","4","1","1","-2","0"];
+let ok=vals.every((id,i)=>accepts(document.getElementById(id).value,[ans[i]])) &&
+accepts(document.getElementById("lab3q").value,["x^2+x-2"]) &&
+accepts(document.getElementById("lab3r").value,["0"]);
+document.getElementById("feedback3").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite. Use c = −2 and include the 0 coefficient.</span>';
+if(ok)markComplete("lab3");
 }
 
 function checkLab4(){
-    const q = document.getElementById("lab4quotient").value;
-    const r = document.getElementById("lab4remainder").value;
-    const f1 = document.getElementById("lab4final1").value;
-    const f2 = document.getElementById("lab4final2").value;
-    const f3 = document.getElementById("lab4final3").value;
-    const feedback = document.getElementById("feedback4");
-
-    const ok =
-        accepts(q,["x^2+2x-3","x²+2x-3"]) &&
-        accepts(r,["13"]) &&
-        accepts(f1,["x^2+2x-3","x²+2x-3"]) &&
-        accepts(f2,["13"]) &&
-        accepts(f3,["x+2"]);
-
-    if(ok){
-        feedback.innerHTML = '<span class="correct">Correct!</span> The expression rewrites as x² + 2x − 3 + 13/(x + 2).';
-        markComplete("lab4");
-    } else {
-        feedback.innerHTML = '<span class="incorrect">Not quite.</span> Remember: final form is quotient + remainder/divisor.';
-    }
+let ok=accepts(document.getElementById("lab4q").value,["x^2+2x-3"])&&
+accepts(document.getElementById("lab4r").value,["13"])&&
+accepts(document.getElementById("lab4fq").value,["x^2+2x-3"])&&
+accepts(document.getElementById("lab4fr").value,["13"])&&
+accepts(document.getElementById("lab4fd").value,["x+2"]);
+document.getElementById("feedback4").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+if(ok)markComplete("lab4");
 }
 
 function checkLab5(){
-    const num = document.getElementById("lab5num").value;
-    const den = document.getElementById("lab5den").value;
-    const cancel = document.getElementById("lab5cancel").value;
-    const final = document.getElementById("lab5final").value;
-    const restrict = document.getElementById("lab5restrict").value;
-    const feedback = document.getElementById("feedback5");
-
-    const numOK = accepts(num,["(x-3)(x+3)","(x+3)(x-3)"]);
-    const denOK = accepts(den,["(x+2)(x+3)","(x+3)(x+2)"]);
-    const cancelOK = accepts(cancel,["x+3","(x+3)"]);
-    const finalOK = accepts(final,["(x-3)/(x+2)","x-3/x+2"]);
-    const rest = normalize(restrict);
-    const restrictOK = rest.includes("x!=-2") && rest.includes("x!=-3");
-
-    if(numOK && denOK && cancelOK && finalOK && restrictOK){
-        feedback.innerHTML = '<span class="correct">Correct!</span> The simplified expression is (x − 3)/(x + 2), with restrictions x ≠ −2 and x ≠ −3.';
-        markComplete("lab5");
-    } else {
-        feedback.innerHTML = '<span class="incorrect">Not quite.</span> Factor first. Restrictions come from the original denominator.';
-    }
+let rest=normalize(document.getElementById("lab5restrict").value);
+let ok=accepts(document.getElementById("lab5num").value,["(x-3)(x+3)","(x+3)(x-3)"])&&
+accepts(document.getElementById("lab5den").value,["(x+2)(x+3)","(x+3)(x+2)"])&&
+accepts(document.getElementById("lab5cancel").value,["x+3","(x+3)"])&&
+accepts(document.getElementById("lab5final").value,["(x-3)/(x+2)"])&&
+rest.includes("x!=-2")&&rest.includes("x!=-3");
+document.getElementById("feedback5").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+if(ok)markComplete("lab5");
 }
 
 function checkLab6(){
-    const first = document.getElementById("lab6first").value;
-    const second = document.getElementById("lab6second").value;
-    const cancel = document.getElementById("lab6cancel").value;
-    const final = document.getElementById("lab6final").value;
-    const restrict = document.getElementById("lab6restrict").value;
-    const feedback = document.getElementById("feedback6");
-
-    const firstOK = accepts(first,["(x-2)/(x+5)","x-2/x+5"]);
-    const secondOK = accepts(second,["(x+5)/3","x+5/3"]);
-    const cancelOK = accepts(cancel,["x+5","(x+5)"]);
-    const finalOK = accepts(final,["(x-2)/3","x-2/3"]);
-    const restrictOK = normalize(restrict).includes("x!=-5");
-
-    if(firstOK && secondOK && cancelOK && finalOK && restrictOK){
-        feedback.innerHTML = '<span class="correct">Correct!</span> The complex fraction simplifies to (x − 2)/3, with restriction x ≠ −5.';
-        markComplete("lab6");
-    } else {
-        feedback.innerHTML = '<span class="incorrect">Not quite.</span> Rewrite division as multiplying by the reciprocal, then cancel the common factor.';
-    }
+let ok=accepts(document.getElementById("lab6aNum").value,["x-2"])&&
+accepts(document.getElementById("lab6aDen").value,["x+5"])&&
+accepts(document.getElementById("lab6bNum").value,["x+5"])&&
+accepts(document.getElementById("lab6bDen").value,["3"])&&
+accepts(document.getElementById("lab6cancel").value,["x+5","(x+5)"])&&
+accepts(document.getElementById("lab6finalNum").value,["x-2"])&&
+accepts(document.getElementById("lab6finalDen").value,["3"])&&
+normalize(document.getElementById("lab6restrict").value).includes("x!=-5");
+document.getElementById("feedback6").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+if(ok)markComplete("lab6");
 }
 
 function resetActivity(){
-    completed = {
-        lab1:false,
-        lab2:false,
-        lab3:false,
-        lab4:false,
-        lab5:false,
-        lab6:false
-    };
-
-    document.getElementById("progressCount").textContent = "0";
-    document.getElementById("completeMessage").style.display = "none";
-    document.querySelectorAll("input").forEach(input => input.value = "");
-    document.querySelectorAll("select").forEach(select => select.value = "");
-    document.querySelectorAll(".feedback").forEach(f => f.innerHTML = "");
-    document.querySelectorAll(".hint").forEach(h => h.style.display = "none");
-
-    window.scrollTo({top:0, behavior:"smooth"});
+completed={lab1:false,lab2:false,lab3:false,lab4:false,lab5:false,lab6:false};
+document.getElementById("progressCount").textContent="0";
+document.getElementById("completeMessage").style.display="none";
+document.querySelectorAll("input").forEach(i=>i.value="");
+document.querySelectorAll("select").forEach(s=>s.value="");
+document.querySelectorAll(".feedback").forEach(f=>f.innerHTML="");
+document.querySelectorAll(".hint").forEach(h=>h.style.display="none");
+window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
