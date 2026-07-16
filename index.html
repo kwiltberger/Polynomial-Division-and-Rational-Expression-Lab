@@ -16,7 +16,10 @@ body{font-family:Arial,sans-serif;background:#f6f9fb;color:#1f2933;line-height:1
 .problem{background:white;border:1px solid #d6e6ef;padding:14px;border-radius:8px;margin:12px 0;font-size:18px}
 input,select{padding:8px;font-size:16px;border:2px solid #d6e6ef;border-radius:8px;margin:4px;max-width:180px}
 button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radius:8px;cursor:pointer;font-size:15px;margin:6px 4px 6px 0}
-.feedback{font-weight:bold;margin-top:10px}.correct{color:#1f7a3a}.incorrect{color:#c0392b}
+button:hover{background:#173f5f}
+.feedback{font-weight:bold;margin-top:10px}
+.correct{color:#1f7a3a}
+.incorrect{color:#c0392b}
 .hint{display:none;background:#fff8e6;border-left:6px solid #f2b705;padding:12px;border-radius:8px;margin-top:10px}
 .progress{font-size:20px;font-weight:bold;color:#0f2d44}
 .frac{display:inline-block;text-align:center;vertical-align:middle}
@@ -26,14 +29,14 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 .step-box{background:#f6f9fb;border:1px solid #d6e6ef;padding:12px;border-radius:8px;margin:10px 0}
 .complete{display:none}
 .long-division{font-family:Arial,sans-serif;font-size:20px;overflow-x:auto;padding:10px;background:white;border:1px solid #d6e6ef;border-radius:8px}
-.ld-row{margin:6px 0}
+.ld-row{margin:6px 0;white-space:nowrap}
 .ld-divisor{display:inline-block;border-right:2px solid #1f2933;border-radius:0 0 8px 0;padding-right:8px;margin-right:4px}
 .ld-inside{display:inline-block;border-top:2px solid #1f2933;padding:4px 10px}
 .synthetic{border-collapse:collapse;margin-top:10px;background:white}
 .synthetic td{border:1px solid #d6e6ef;padding:8px;text-align:center}
 .synthetic .left{border-right:3px solid #1f2933}
 .synthetic .bottom td{border-top:3px solid #1f2933}
-@media(max-width:800px){input,select{max-width:95%;width:95%}}
+@media(max-width:800px){input,select{max-width:95%;width:95%}.frac input{width:90px}}
 </style>
 </head>
 
@@ -42,7 +45,7 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 
 <div class="hero">
 <h1>Algebra 2 | Unit 3 Week 1</h1>
-<p>Self-Check & Extra Practice — Polynomial Division & Rational Expression Lab</p>
+<p>Self-Check &amp; Extra Practice — Polynomial Division &amp; Rational Expression Lab</p>
 </div>
 
 <div class="card">
@@ -105,20 +108,20 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 <span class="ld-divisor">x + 2</span>
 <span class="ld-inside">x³ + 3x² + 0x − 4</span>
 </div>
-<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m1" placeholder="line 1"> )</div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m1" placeholder="multiply row"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
-<div class="ld-row" style="margin-left:140px;"><input id="lab2s1" placeholder="x² + 0x"></div>
-<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m2" placeholder="line 2"> )</div>
+<div class="ld-row" style="margin-left:140px;"><input id="lab2s1" placeholder="subtract row"></div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m2" placeholder="multiply row"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
-<div class="ld-row" style="margin-left:160px;"><input id="lab2s2" placeholder="line 3"></div>
-<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m3" placeholder="line 4"> )</div>
+<div class="ld-row" style="margin-left:160px;"><input id="lab2s2" placeholder="subtract row"></div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m3" placeholder="multiply row"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
-<div class="ld-row" style="margin-left:180px;">Remainder: <input id="lab2r" placeholder="line 5"></div>
+<div class="ld-row" style="margin-left:180px;">Remainder: <input id="lab2r" placeholder="value"></div>
 </div>
 
 <button onclick="checkLab2()">Check Lab 2</button>
 <button onclick="toggleHint('hint2')">Show Hint</button>
-<div id="hint2" class="hint">First divide x³ by x to get x². Remember to subtract the entire row each time.</div>
+<div id="hint2" class="hint">First divide x³ by x. Remember to subtract the entire row each time.</div>
 <div id="feedback2" class="feedback"></div>
 </div>
 
@@ -130,39 +133,39 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 <p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
 </div>
 
-<p>Since <strong>x + 2 = x − (−2)</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="c"></p>
+<p>Since <strong>x + 2 = x − (−2)</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="value"></p>
 
 <table class="synthetic">
 <tbody>
 <tr>
 <td class="left"><input id="lab3left" placeholder="c"></td>
-<td><input id="lab3coef1" placeholder="number"></td>
-<td><input id="lab3coef2" placeholder="number"></td>
-<td><input id="lab3coef3" placeholder="number"></td>
-<td><input id="lab3coef4" placeholder="number"></td>
+<td><input id="lab3coef1" placeholder="coef"></td>
+<td><input id="lab3coef2" placeholder="coef"></td>
+<td><input id="lab3coef3" placeholder="coef"></td>
+<td><input id="lab3coef4" placeholder="coef"></td>
 </tr>
 <tr>
 <td class="left"></td>
 <td></td>
-<td><input id="lab3prod1" placeholder="number"></td>
-<td><input id="lab3prod2" placeholder="number"></td>
-<td><input id="lab3prod3" placeholder="number"></td>
+<td><input id="lab3prod1" placeholder="product"></td>
+<td><input id="lab3prod2" placeholder="product"></td>
+<td><input id="lab3prod3" placeholder="product"></td>
 </tr>
 <tr class="bottom">
 <td class="left"></td>
-<td><input id="lab3bot1" placeholder="number"></td>
-<td><input id="lab3bot2" placeholder="number"></td>
-<td><input id="lab3bot3" placeholder="number"></td>
-<td><input id="lab3bot4" placeholder="number"></td>
+<td><input id="lab3bot1" placeholder="value"></td>
+<td><input id="lab3bot2" placeholder="value"></td>
+<td><input id="lab3bot3" placeholder="value"></td>
+<td><input id="lab3bot4" placeholder="value"></td>
 </tr>
 </tbody>
 </table>
 
-<p>Quotient: <input id="lab3q" placeholder="x² + x - 2"> Remainder: <input id="lab3r" placeholder="number"></p>
+<p>Quotient: <input id="lab3q" placeholder="quotient"> Remainder: <input id="lab3r" placeholder="remainder"></p>
 
 <button onclick="checkLab3()">Check Lab 3</button>
 <button onclick="toggleHint('hint3')">Show Hint</button>
-<div id="hint3" class="hint">Use coefficients 1, 3, 0, −4. The 0 is needed because the x term is missing.</div>
+<div id="hint3" class="hint">Use the coefficient list from x³ + 3x² + 0x − 4. The 0 is needed because the x term is missing.</div>
 <div id="feedback3" class="feedback"></div>
 </div>
 
@@ -181,7 +184,7 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 <p>Remainder: <input id="lab4r" placeholder="remainder"></p>
 <p>Final rewrite:
 <input id="lab4fq" placeholder="quotient"> +
-<span class="frac"><span><input id="lab4fr" placeholder="remainder"></span><span><input id="lab4fd" placeholder="x+c"></span></span>
+<span class="frac"><span><input id="lab4fr" placeholder="remainder"></span><span><input id="lab4fd" placeholder="divisor"></span></span>
 </p>
 </div>
 
@@ -192,7 +195,7 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 </div>
 
 <div class="card green">
-<h2>Lab 5 — Simplify & Restrictions</h2>
+<h2>Lab 5 — Simplify &amp; Restrictions</h2>
 
 <div class="problem">
 <p><strong>Simplify:</strong>
@@ -201,11 +204,11 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 </div>
 
 <div class="step-box">
-<p>Factored numerator: <input id="lab5num" placeholder="(factor)(factor)"></p>
-<p>Factored denominator: <input id="lab5den" placeholder="(factor)(factor)"></p>
-<p>Canceled factor: <input id="lab5cancel" placeholder="factor"></p>
-<p>Simplified expression: <input id="lab5final" placeholder="(numerator)/(denominator)"></p>
-<p>Restrictions: <input id="lab5restrict" placeholder="x ≠ value, x ≠ value"></p>
+<p>Factored numerator: <input id="lab5num" placeholder="factored numerator"></p>
+<p>Factored denominator: <input id="lab5den" placeholder="factored denominator"></p>
+<p>Canceled factor: <input id="lab5cancel" placeholder="common factor"></p>
+<p>Simplified expression: <input id="lab5final" placeholder="final expression"></p>
+<p>Restrictions: x ≠ <input id="lab5r1" placeholder="value"> and x ≠ <input id="lab5r2" placeholder="value"></p>
 </div>
 
 <button onclick="checkLab5()">Check Lab 5</button>
@@ -229,27 +232,26 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 <div class="step-box">
 <p>Rewrite as multiplication:</p>
 <p style="font-size:20px;">
-<span class="frac"><span><input id="lab6aNum" placeholder="fraction 1 numerator"></span><span><input id="lab6aDen" placeholder="fraction 1 denominator"></span></span>
+<span class="frac"><span><input id="lab6aNum" placeholder="numerator"></span><span><input id="lab6aDen" placeholder="denominator"></span></span>
 &nbsp;·&nbsp;
-<span class="frac"><span><input id="lab6bNum" placeholder="fraction 2 reciprocal numerator"></span><span><input id="lab6bDen" placeholder="fraction 2 reciprocal denominator"></span></span>
+<span class="frac"><span><input id="lab6bNum" placeholder="numerator"></span><span><input id="lab6bDen" placeholder="denominator"></span></span>
 </p>
 
-<p>Canceled factor: <input id="lab6cancel" placeholder="factor"></p>
+<p>Canceled factor: <input id="lab6cancel" placeholder="common factor"></p>
 
 <p>Final simplified result:</p>
 <p style="font-size:20px;">
 <span class="frac"><span><input id="lab6finalNum" placeholder="numerator"></span><span><input id="lab6finalDen" placeholder="denominator"></span></span>
 </p>
 
-<p>Restriction: <input id="lab6restrict" placeholder="x ≠ value"></p>
+<p>Restriction: x ≠ <input id="lab6r1" placeholder="value"></p>
 </div>
 
 <button onclick="checkLab6()">Check Lab 6</button>
 <button onclick="toggleHint('hint6')">Show Hint</button>
-<div id="hint6" class="hint">Dividing by 3/(x + 5) means multiplying by (x + 5)/3.</div>
+<div id="hint6" class="hint">Dividing by a fraction means multiplying by its reciprocal.</div>
 <div id="feedback6" class="feedback"></div>
 </div>
-
 <div class="card green complete" id="completeMessage">
 <h2>Lab Complete!</h2>
 <p>Excellent work. You practiced all major Unit 3 Week 1 skills.</p>
@@ -263,12 +265,51 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 let completed={lab1:false,lab2:false,lab3:false,lab4:false,lab5:false,lab6:false};
 
 function normalize(v){
-return String(v).toLowerCase().replace(/\s+/g,"").replace(/−/g,"-").replace(/²/g,"^2").replace(/³/g,"^3").replace(/≠/g,"!=");
+return String(v)
+.toLowerCase()
+.replace(/\s+/g,"")
+.replace(/−/g,"-")
+.replace(/²/g,"^2")
+.replace(/³/g,"^3")
+.replace(/≠/g,"!=")
+.replace(/\b1x/g,"x")
+.replace(/-1x/g,"-x");
 }
-function accepts(v,arr){const n=normalize(v);return arr.map(normalize).includes(n);}
-function toggleHint(id){const h=document.getElementById(id);h.style.display=h.style.display==="block"?"none":"block";}
-function markComplete(lab){if(!completed[lab]){completed[lab]=true;updateProgress();}}
-function updateProgress(){const c=Object.values(completed).filter(Boolean).length;document.getElementById("progressCount").textContent=c;if(c===6){document.getElementById("completeMessage").style.display="block";}}
+
+function stripOuterParens(v){
+return normalize(v).replace(/^\((.*)\)$/,"$1");
+}
+
+function accepts(v,arr){
+const n=normalize(v);
+return arr.map(normalize).includes(n);
+}
+
+function acceptsNoParens(v,arr){
+const n=stripOuterParens(v);
+return arr.map(stripOuterParens).includes(n);
+}
+
+function toggleHint(id){
+const h=document.getElementById(id);
+h.style.display=h.style.display==="block"?"none":"block";
+}
+
+function markComplete(lab){
+if(!completed[lab]){
+completed[lab]=true;
+updateProgress();
+}
+}
+
+function updateProgress(){
+const c=Object.values(completed).filter(Boolean).length;
+document.getElementById("progressCount").textContent=c;
+if(c===6){
+document.getElementById("completeMessage").style.display="block";
+document.getElementById("completeMessage").scrollIntoView({behavior:"smooth"});
+}
+}
 
 function checkLab1(){
 let ok=document.getElementById("lab1a").value==="synthetic"&&document.getElementById("lab1b").value==="factor";
@@ -287,6 +328,7 @@ accepts(document.getElementById("lab2m2").value,["x^2+2x"]) &&
 accepts(document.getElementById("lab2s2").value,["-2x-4"]) &&
 accepts(document.getElementById("lab2m3").value,["-2x-4"]) &&
 accepts(document.getElementById("lab2r").value,["0"]);
+
 document.getElementById("feedback2").innerHTML=ok?'<span class="correct">Correct!</span> Quotient x² + x − 2, remainder 0.':'<span class="incorrect">Not quite. Check each subtract row.</span>';
 if(ok)markComplete("lab2");
 }
@@ -294,44 +336,56 @@ if(ok)markComplete("lab2");
 function checkLab3(){
 let vals=["lab3c","lab3left","lab3coef1","lab3coef2","lab3coef3","lab3coef4","lab3prod1","lab3prod2","lab3prod3","lab3bot1","lab3bot2","lab3bot3","lab3bot4"];
 let ans=["-2","-2","1","3","0","-4","-2","-2","4","1","1","-2","0"];
+
 let ok=vals.every((id,i)=>accepts(document.getElementById(id).value,[ans[i]])) &&
 accepts(document.getElementById("lab3q").value,["x^2+x-2"]) &&
 accepts(document.getElementById("lab3r").value,["0"]);
+
 document.getElementById("feedback3").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite. Use c = −2 and include the 0 coefficient.</span>';
 if(ok)markComplete("lab3");
 }
 
 function checkLab4(){
-let ok=accepts(document.getElementById("lab4q").value,["x^2+2x-3"])&&
-accepts(document.getElementById("lab4r").value,["13"])&&
-accepts(document.getElementById("lab4fq").value,["x^2+2x-3"])&&
-accepts(document.getElementById("lab4fr").value,["13"])&&
+let ok=
+accepts(document.getElementById("lab4q").value,["x^2+2x-3"]) &&
+accepts(document.getElementById("lab4r").value,["13"]) &&
+accepts(document.getElementById("lab4fq").value,["x^2+2x-3"]) &&
+accepts(document.getElementById("lab4fr").value,["13"]) &&
 accepts(document.getElementById("lab4fd").value,["x+2"]);
-document.getElementById("feedback4").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+
+document.getElementById("feedback4").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite. Remember: quotient + remainder/divisor.</span>';
 if(ok)markComplete("lab4");
 }
 
 function checkLab5(){
-let rest=normalize(document.getElementById("lab5restrict").value);
-let ok=accepts(document.getElementById("lab5num").value,["(x-3)(x+3)","(x+3)(x-3)"])&&
-accepts(document.getElementById("lab5den").value,["(x+2)(x+3)","(x+3)(x+2)"])&&
-accepts(document.getElementById("lab5cancel").value,["x+3","(x+3)"])&&
-accepts(document.getElementById("lab5final").value,["(x-3)/(x+2)"])&&
-rest.includes("x!=-2")&&rest.includes("x!=-3");
-document.getElementById("feedback5").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+const r1=normalize(document.getElementById("lab5r1").value);
+const r2=normalize(document.getElementById("lab5r2").value);
+
+let restrictOK=(r1==="-2"&&r2==="-3")||(r1==="-3"&&r2==="-2");
+
+let ok=
+accepts(document.getElementById("lab5num").value,["(x-3)(x+3)","(x+3)(x-3)"]) &&
+accepts(document.getElementById("lab5den").value,["(x+2)(x+3)","(x+3)(x+2)"]) &&
+acceptsNoParens(document.getElementById("lab5cancel").value,["x+3"]) &&
+accepts(document.getElementById("lab5final").value,["(x-3)/(x+2)","x-3/x+2"]) &&
+restrictOK;
+
+document.getElementById("feedback5").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite. Factor first, cancel common factors, and use the original denominator for restrictions.</span>';
 if(ok)markComplete("lab5");
 }
 
 function checkLab6(){
-let ok=accepts(document.getElementById("lab6aNum").value,["x-2"])&&
-accepts(document.getElementById("lab6aDen").value,["x+5"])&&
-accepts(document.getElementById("lab6bNum").value,["x+5"])&&
-accepts(document.getElementById("lab6bDen").value,["3"])&&
-accepts(document.getElementById("lab6cancel").value,["x+5","(x+5)"])&&
-accepts(document.getElementById("lab6finalNum").value,["x-2"])&&
-accepts(document.getElementById("lab6finalDen").value,["3"])&&
-normalize(document.getElementById("lab6restrict").value).includes("x!=-5");
-document.getElementById("feedback6").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite.</span>';
+let ok=
+acceptsNoParens(document.getElementById("lab6aNum").value,["x-2"]) &&
+acceptsNoParens(document.getElementById("lab6aDen").value,["x+5"]) &&
+acceptsNoParens(document.getElementById("lab6bNum").value,["x+5"]) &&
+acceptsNoParens(document.getElementById("lab6bDen").value,["3"]) &&
+acceptsNoParens(document.getElementById("lab6cancel").value,["x+5"]) &&
+acceptsNoParens(document.getElementById("lab6finalNum").value,["x-2"]) &&
+acceptsNoParens(document.getElementById("lab6finalDen").value,["3"]) &&
+normalize(document.getElementById("lab6r1").value)==="-5";
+
+document.getElementById("feedback6").innerHTML=ok?'<span class="correct">Correct!</span>':'<span class="incorrect">Not quite. Rewrite division as multiplication by the reciprocal, then cancel the common factor.</span>';
 if(ok)markComplete("lab6");
 }
 
