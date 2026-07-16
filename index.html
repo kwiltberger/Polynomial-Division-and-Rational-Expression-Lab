@@ -99,21 +99,21 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 
 <div class="long-division">
 <div class="ld-row" style="margin-left:120px;">
-<input id="lab2q1" placeholder="x²"> + <input id="lab2q2" placeholder="x"> + <input id="lab2q3" placeholder="-2">
+<input id="lab2q1" placeholder="term 1"> + <input id="lab2q2" placeholder="term 2"> + <input id="lab2q3" placeholder="term 3">
 </div>
 <div class="ld-row">
 <span class="ld-divisor">x + 2</span>
 <span class="ld-inside">x³ + 3x² + 0x − 4</span>
 </div>
-<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m1" placeholder="x³ + 2x²"> )</div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m1" placeholder="line 1"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
 <div class="ld-row" style="margin-left:140px;"><input id="lab2s1" placeholder="x² + 0x"></div>
-<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m2" placeholder="x² + 2x"> )</div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m2" placeholder="line 2"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
-<div class="ld-row" style="margin-left:160px;"><input id="lab2s2" placeholder="-2x - 4"></div>
-<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m3" placeholder="-2x - 4"> )</div>
+<div class="ld-row" style="margin-left:160px;"><input id="lab2s2" placeholder="line 3"></div>
+<div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m3" placeholder="line 4"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
-<div class="ld-row" style="margin-left:180px;">Remainder: <input id="lab2r" placeholder="0"></div>
+<div class="ld-row" style="margin-left:180px;">Remainder: <input id="lab2r" placeholder="line 5"></div>
 </div>
 
 <button onclick="checkLab2()">Check Lab 2</button>
@@ -130,35 +130,35 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 <p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
 </div>
 
-<p>Since <strong>x + 2 = x − (−2)</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="-2"></p>
+<p>Since <strong>x + 2 = x − (−2)</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="c"></p>
 
 <table class="synthetic">
 <tbody>
 <tr>
-<td class="left"><input id="lab3left" placeholder="-2"></td>
-<td><input id="lab3coef1" placeholder="1"></td>
-<td><input id="lab3coef2" placeholder="3"></td>
-<td><input id="lab3coef3" placeholder="0"></td>
-<td><input id="lab3coef4" placeholder="-4"></td>
+<td class="left"><input id="lab3left" placeholder="c"></td>
+<td><input id="lab3coef1" placeholder="number"></td>
+<td><input id="lab3coef2" placeholder="number"></td>
+<td><input id="lab3coef3" placeholder="number"></td>
+<td><input id="lab3coef4" placeholder="number"></td>
 </tr>
 <tr>
 <td class="left"></td>
 <td></td>
-<td><input id="lab3prod1" placeholder="-2"></td>
-<td><input id="lab3prod2" placeholder="-2"></td>
-<td><input id="lab3prod3" placeholder="4"></td>
+<td><input id="lab3prod1" placeholder="number"></td>
+<td><input id="lab3prod2" placeholder="number"></td>
+<td><input id="lab3prod3" placeholder="number"></td>
 </tr>
 <tr class="bottom">
 <td class="left"></td>
-<td><input id="lab3bot1" placeholder="1"></td>
-<td><input id="lab3bot2" placeholder="1"></td>
-<td><input id="lab3bot3" placeholder="-2"></td>
-<td><input id="lab3bot4" placeholder="0"></td>
+<td><input id="lab3bot1" placeholder="number"></td>
+<td><input id="lab3bot2" placeholder="number"></td>
+<td><input id="lab3bot3" placeholder="number"></td>
+<td><input id="lab3bot4" placeholder="number"></td>
 </tr>
 </tbody>
 </table>
 
-<p>Quotient: <input id="lab3q" placeholder="x² + x - 2"> Remainder: <input id="lab3r" placeholder="0"></p>
+<p>Quotient: <input id="lab3q" placeholder="x² + x - 2"> Remainder: <input id="lab3r" placeholder="number"></p>
 
 <button onclick="checkLab3()">Check Lab 3</button>
 <button onclick="toggleHint('hint3')">Show Hint</button>
@@ -177,11 +177,11 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 </div>
 
 <div class="step-box">
-<p>Quotient: <input id="lab4q" placeholder="x² + 2x - 3"></p>
-<p>Remainder: <input id="lab4r" placeholder="13"></p>
+<p>Quotient: <input id="lab4q" placeholder="quotient"></p>
+<p>Remainder: <input id="lab4r" placeholder="remainder"></p>
 <p>Final rewrite:
 <input id="lab4fq" placeholder="quotient"> +
-<span class="frac"><span><input id="lab4fr" placeholder="13"></span><span><input id="lab4fd" placeholder="x + 2"></span></span>
+<span class="frac"><span><input id="lab4fr" placeholder="remainder"></span><span><input id="lab4fd" placeholder="x+c"></span></span>
 </p>
 </div>
 
@@ -201,11 +201,11 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 </div>
 
 <div class="step-box">
-<p>Factored numerator: <input id="lab5num" placeholder="(x - 3)(x + 3)"></p>
-<p>Factored denominator: <input id="lab5den" placeholder="(x + 2)(x + 3)"></p>
-<p>Canceled factor: <input id="lab5cancel" placeholder="x + 3"></p>
-<p>Simplified expression: <input id="lab5final" placeholder="(x - 3)/(x + 2)"></p>
-<p>Restrictions: <input id="lab5restrict" placeholder="x ≠ -2, x ≠ -3"></p>
+<p>Factored numerator: <input id="lab5num" placeholder="(factor)(factor)"></p>
+<p>Factored denominator: <input id="lab5den" placeholder="(factor)(factor)"></p>
+<p>Canceled factor: <input id="lab5cancel" placeholder="factor"></p>
+<p>Simplified expression: <input id="lab5final" placeholder="(numerator)/(denominator)"></p>
+<p>Restrictions: <input id="lab5restrict" placeholder="x ≠ value, x ≠ value"></p>
 </div>
 
 <button onclick="checkLab5()">Check Lab 5</button>
@@ -229,19 +229,19 @@ button{background:#0f2d44;color:white;border:none;padding:11px 16px;border-radiu
 <div class="step-box">
 <p>Rewrite as multiplication:</p>
 <p style="font-size:20px;">
-<span class="frac"><span><input id="lab6aNum" placeholder="x - 2"></span><span><input id="lab6aDen" placeholder="x + 5"></span></span>
+<span class="frac"><span><input id="lab6aNum" placeholder="fraction 1 numerator"></span><span><input id="lab6aDen" placeholder="fraction 1 denominator"></span></span>
 &nbsp;·&nbsp;
-<span class="frac"><span><input id="lab6bNum" placeholder="x + 5"></span><span><input id="lab6bDen" placeholder="3"></span></span>
+<span class="frac"><span><input id="lab6bNum" placeholder="fraction 2 reciprocal numerator"></span><span><input id="lab6bDen" placeholder="fraction 2 reciprocal denominator"></span></span>
 </p>
 
-<p>Canceled factor: <input id="lab6cancel" placeholder="x + 5"></p>
+<p>Canceled factor: <input id="lab6cancel" placeholder="factor"></p>
 
 <p>Final simplified result:</p>
 <p style="font-size:20px;">
-<span class="frac"><span><input id="lab6finalNum" placeholder="x - 2"></span><span><input id="lab6finalDen" placeholder="3"></span></span>
+<span class="frac"><span><input id="lab6finalNum" placeholder="numerator"></span><span><input id="lab6finalDen" placeholder="denominator"></span></span>
 </p>
 
-<p>Restriction: <input id="lab6restrict" placeholder="x ≠ -5"></p>
+<p>Restriction: <input id="lab6restrict" placeholder="x ≠ value"></p>
 </div>
 
 <button onclick="checkLab6()">Check Lab 6</button>
